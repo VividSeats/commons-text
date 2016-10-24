@@ -98,7 +98,7 @@ import org.apache.commons.lang3.StringUtils;
  *
  * <p>This class is immutable.</p>
  */
-public class HumanNameParser {
+public final class HumanNameParser {
 
     private final List<String> salutations;
     private final List<String> suffixes;
@@ -135,7 +135,7 @@ public class HumanNameParser {
 
         NameString nameString = new NameString(name);
         // TODO compile regexes only once when the parser is created
-        String salutations = StringUtils.join(this.salutations, " |") + "";
+        String salutations = StringUtils.join(this.salutations, " |") + " ";
         String suffixes = StringUtils.join(this.suffixes, "\\.*|") + "\\.*";
         String prefixes = StringUtils.join(this.prefixes, " |") + " ";
 
